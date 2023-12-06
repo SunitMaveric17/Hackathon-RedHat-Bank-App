@@ -1,0 +1,162 @@
+<div class="justify-content-center align-items-center">
+  <div class="jumbotron h-100 d-flex">
+    <div class="container-fluid">
+      <div class="container-fluid p-3 w-90">
+        <button
+          type="button"
+          class="btn-close btn-close-red float-end"
+          aria-label="Close"
+          (click)="onCancel()"
+        ></button>
+
+        <h3 class="h3 text-center bold strong py-4">Create Savings Account</h3>
+        <form [formGroup]="addSavingsAccountForm" class="form-floating mb-3">
+          <div class="form-floating mb-2 inside-search-box">
+            <input
+              type="text"
+              class="form-control me-2"
+              id="customerId"
+              formControlName="customerId"
+            />
+            <button
+              type="button"
+              id="searchButton"
+              class="btn btn-danger rounded text-center px-5 bold"
+              (click)="searchCustomer()"
+            >
+              SEARCH
+            </button>
+            <label class="form-label" for="customerId">Customer ID</label>
+          </div>
+          <div
+            class="text-danger text-sm"
+            *ngIf="
+              addSavingsAccountForm.get('customerId')?.hasError('required') &&
+              addSavingsAccountForm.get('customerId')?.touched
+            "
+          >
+            Customer ID is required
+          </div>
+          <div
+            class="text-danger text-sm"
+            *ngIf="addSavingsAccountForm.get('customerId')?.hasError('pattern')"
+          >
+            Customer ID is number only
+          </div>
+          <div
+            class="text-danger text-sm"
+            *ngIf="
+              customerFound != true &&
+              addSavingsAccountForm.get('customerId')?.touched
+            "
+          >
+            Customer not found
+          </div>
+          <div class="form-floating mb-2">
+            <input
+              type="text"
+              class="form-control bg-light"
+              id="name"
+              formControlName="name"
+              readonly
+            />
+            <label class="form-label" for="name">Name</label>
+          </div>
+          <div class="form-floating mb-2">
+            <input
+              type="text"
+              class="form-control bg-light"
+              id="phoneNumber"
+              formControlName="phoneNumber"
+              readonly
+            />
+            <label class="form-label" for="phoneNumber">Phone Number</label>
+            <div
+              class="text-danger text-sm"
+              *ngIf="
+                addSavingsAccountForm.get('phoneNumber')?.hasError('pattern')
+              "
+            >
+              Phone Number is numeric only
+            </div>
+          </div>
+          <div class="form-floating mb-2">
+            <select
+              id="minOpeningBalance"
+              formControlName="minOpeningBalance"
+              class="form-select"
+            >
+              <option
+                *ngFor="let minOpeningBalance of minOpeningBalanceAvailable"
+              >
+                {{ minOpeningBalance }}
+              </option>
+            </select>
+            <label for="minOpeningBalance">Min Opening Balance</label>
+          </div>
+          <!-- <label for="savingsAccount">Savings Accounts</label> -->
+          <div class="form-floating mb-2">
+            <select
+              id="interestCompoundPeriod"
+              formControlName="interestCompoundPeriod"
+              class="form-select"
+            >
+              <ng-container
+                *ngFor="
+                  let interestCompoundPeriod of interestCompoundingPeriodAvailable
+                "
+              >
+                <option [value]="interestCompoundPeriod">
+                  {{ interestCompoundPeriod }}
+                </option>
+              </ng-container>
+            </select>
+            <label for="interestCompoundPeriod">Interest Compound Period</label>
+          </div>
+          <div class="form-floating mb-2">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault"
+                (change)="onOverdraftToggleClick($event)"
+              />
+              <label class="form-check-label" for="flexCheckDefault">
+                Allow Overdraft
+              </label>
+            </div>
+          </div>
+          <div *ngIf="allowOverdraftToggle" class="form-floating mb-3">
+            <select
+              id="overDraftLimit"
+              formControlName="overDraftLimit"
+              class="form-select"
+            >
+              <option *ngFor="let overDraftLimit of overdraftLimitAvailable">
+                {{ overDraftLimit }}
+              </option>
+            </select>
+            <label for="overDraftLimit">Over Draft Limit</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="file"
+              class="form-control-file"
+              (change)="onFileSelected($event)"
+              id="documentUpload"
+            />
+          </div>
+          <button
+            type="submit"
+            (click)="onSubmit()"
+            class="btn btn-danger w-100"
+          >
+            CREATE
+          </button>
+          <div class="pt-4"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

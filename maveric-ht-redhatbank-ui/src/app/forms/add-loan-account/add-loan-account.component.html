@@ -1,0 +1,147 @@
+<div class="justify-content-center align-items-center">
+  <div class="jumbotron h-100 d-flex">
+    <div class="container-fluid">
+      <div class="container-fluid p-3 w-90">
+        <button
+          type="button"
+          class="btn-close btn-close-red float-end"
+          aria-label="Close"
+          (click)="onCancel()"
+        ></button>
+        <h3 class="h3 text-center bold strong py-4">Create Loan Account</h3>
+        <form [formGroup]="addLoanAccountForm" class="form-floating mb-3">
+          <div class="text-danger text-sm mb-2">
+            <div class="form-floating inside-search-box">
+              <input
+                type="text"
+                class="form-control me-2"
+                id="customerId"
+                formControlName="customerId"
+              />
+              <button
+                type="button"
+                id="searchButton"
+                class="btn btn-danger rounded text-center px-5 bold"
+                (click)="searchCustomer()"
+              >
+                SEARCH
+              </button>
+              <label class="form-label" for="customerId">Customer ID</label>
+            </div>
+            <div
+              class="text-danger text-sm"
+              *ngIf="
+                addLoanAccountForm.get('customerId')?.hasError('required') &&
+                addLoanAccountForm.get('customerId')?.touched
+              "
+            >
+              Customer ID is required
+            </div>
+            <div
+              class="text-danger text-sm"
+              *ngIf="addLoanAccountForm.get('customerId')?.hasError('pattern')"
+            >
+              Customer ID is number only
+            </div>
+            <div
+              class="text-danger text-sm"
+              *ngIf="
+                addLoanAccountForm.get('customerId')?.touched && !customerFound
+              "
+            >
+              Customer ID is not found
+            </div>
+            <div
+              class="text-danger text-sm"
+              *ngIf="
+                !savingsAccountFound &&
+                addLoanAccountForm.get('customerId')?.touched
+              "
+            >
+              Active Savings Account with customer Id not found
+            </div>
+          </div>
+          <div
+            *ngIf="savingsAccountsAvailable.length != 0"
+            class="form-floating mb-2"
+          >
+            <select
+              id="savingsAccount"
+              formControlName="savingsAccount"
+              class="form-select"
+            >
+              <ng-container
+                *ngFor="let savingsAccount of savingsAccountsAvailable"
+              >
+                <option [value]="savingsAccount">{{ savingsAccount }}</option>
+              </ng-container>
+            </select>
+            <label for="savingsAccount">Savings Accounts</label>
+          </div>
+          <div class="form-floating mb-2">
+            <input
+              type="text"
+              class="form-control"
+              id="loanAmount"
+              formControlName="loanAmount"
+            />
+            <label class="form-label" for="loanAmount">Loan Amount</label>
+            <div
+              class="text-danger text-sm"
+              *ngIf="addLoanAccountForm.get('loanAmount')?.hasError('pattern')"
+            >
+              Loan Amount is numeric only
+            </div>
+            <div
+              class="text-danger text-sm"
+              *ngIf="
+                addLoanAccountForm.get('loanAmount')?.hasError('min') &&
+                addLoanAccountForm.get('loanAmount')?.touched
+              "
+            >
+              Loan Amount should be atleast 1 lakh (1,00,000)
+            </div>
+          </div>
+          <div class="form-floating mb-2">
+            <input
+              type="text"
+              class="form-control"
+              id="emi"
+              formControlName="emi"
+            />
+            <label class="form-label" for="emi">EMI (in months)</label>
+            <div
+              class="text-danger text-sm"
+              *ngIf="addLoanAccountForm.get('emi')?.hasError('pattern')"
+            >
+              EMI is numeric only
+            </div>
+            <div
+              class="text-danger text-sm"
+              *ngIf="addLoanAccountForm.get('emi')?.hasError('min')"
+            >
+              EMI has to of minimum 2 months
+            </div>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="file"
+              (change)="onFileSelected($event)"
+              class="form-control-file"
+              id="documentUpload"
+            />
+          </div>
+          <button
+            (click)="onSubmit()"
+            type="submit"
+            [disabled]="addLoanAccountForm.invalid"
+            class="btn btn-danger w-100"
+          >
+            CREATE
+          </button>
+          <div class="pt-4"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+.main-header-container {
+  width: 100%;
+  padding-bottom: 70px;
+}
+
+.main-footer-container {
+  width: 100%;
+  padding-top: 70px;
+}
+
+::ng-deep .custom-snackbar {
+  padding-bottom: 10vh;
+}

@@ -1,0 +1,166 @@
+<div class="justify-content-center align-items-center">
+  <div class="jumbotron h-100 d-flex">
+    <div class="container-fluid">
+      <div class="container-fluid p-3 w-90">
+        <button
+          type="button"
+          class="btn-close btn-close-red float-end"
+          aria-label="Close"
+          (click)="onCancel()"
+        ></button>
+
+        <h3 class="h3 text-center bold strong py-4">Modify Customer Account</h3>
+        <form
+          [formGroup]="modifyCustomerForm"
+          class="form-floating mb-3"
+          (ngSubmit)="onSubmit()"
+        >
+          <div class="form-floating mb-2">
+            <input
+              type="text"
+              class="form-control bg-light"
+              id="customerId"
+              formControlName="customerId"
+              readonly
+            />
+            <label class="form-label" for="customerId">Customer ID</label>
+            <div
+              class="text-danger text-sm"
+              *ngIf="modifyCustomerForm.get('customerId')?.hasError('required')"
+            >
+              Customer ID is required
+            </div>
+          </div>
+          <!-- <div class="form-floating mb-2">
+            <input
+              type="text"
+              class="form-control"
+              id="firstName"
+              formControlName="firstName"
+            />
+            <label class="form-label" for="firstName">First Name</label>
+            <div
+              class="text-danger text-sm"
+              *ngIf="
+                modifyCustomerForm.get('firstName')?.hasError('required') &&
+                modifyCustomerForm.get('firstName')?.touched
+              "
+            >
+              First name is required
+            </div>
+          </div>
+          <div class="form-floating mb-2">
+            <input
+              type="text"
+              class="form-control"
+              id="lastName"
+              formControlName="lastName"
+            />
+            <label class="form-label" for="lastName">Last Name</label>
+            <div
+              class="text-danger text-sm"
+              *ngIf="
+                modifyCustomerForm.get('lastName')?.hasError('required') &&
+                modifyCustomerForm.get('lastName')?.touched
+              "
+            >
+              Last name is required
+            </div>
+          </div> -->
+          <div class="form-floating mb-2">
+            <input
+              type="text"
+              class="form-control"
+              id="email"
+              formControlName="email"
+            />
+            <label class="form-label" for="email">Email Id</label>
+            <div
+              class="text-danger text-sm"
+              *ngIf="
+                modifyCustomerForm.get('email')?.hasError('required') &&
+                modifyCustomerForm.get('email')?.touched
+              "
+            >
+              Email ID is required
+            </div>
+            <div
+              class="text-danger text-sm"
+              *ngIf="
+                modifyCustomerForm.get('email')?.hasError('pattern') &&
+                modifyCustomerForm.get('email')?.touched
+              "
+            >
+              Provide a valid email address
+            </div>
+          </div>
+          <div class="form-floating mb-2">
+            <input
+              type="text"
+              class="form-control"
+              id="phoneNumber"
+              formControlName="phoneNumber"
+            />
+            <label class="form-label" for="phoneNumber">Phone Number</label>
+            <div
+              class="text-danger text-sm"
+              *ngIf="
+                modifyCustomerForm.get('phoneNumber')?.hasError('required') &&
+                modifyCustomerForm.get('phoneNumber')?.touched
+              "
+            >
+              Phone Number is required
+            </div>
+            <div
+              class="text-danger text-sm"
+              *ngIf="
+                modifyCustomerForm.get('phoneNumber')?.hasError('minlength') &&
+                modifyCustomerForm.get('phoneNumber')?.touched
+              "
+            >
+              Phone Number is of 10 digits only
+            </div>
+            <div
+              class="text-danger text-sm"
+              *ngIf="
+                modifyCustomerForm.get('phoneNumber')?.hasError('maxlength') &&
+                modifyCustomerForm.get('phoneNumber')?.touched
+              "
+            >
+              Phone Number is of 10 digits only
+            </div>
+          </div>
+          <div class="form-floating mb-3">
+            <select id="city" formControlName="city" class="form-select">
+              <option
+                *ngFor="let city of citiesAvailable; let first = first"
+                [value]="city"
+                [selected]="first"
+              >
+                {{ city }}
+              </option>
+            </select>
+            <label for="city">Select City</label>
+            <div
+              class="text-danger text-sm"
+              *ngIf="
+                modifyCustomerForm.get('city')?.hasError('required') &&
+                modifyCustomerForm.get('city')?.touched
+              "
+            >
+              City is required
+            </div>
+          </div>
+          <button
+            type="submit"
+            [disabled]="modifyCustomerForm.invalid"
+            class="btn btn-danger w-100"
+          >
+            MODIFY
+          </button>
+          <div class="pt-4"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

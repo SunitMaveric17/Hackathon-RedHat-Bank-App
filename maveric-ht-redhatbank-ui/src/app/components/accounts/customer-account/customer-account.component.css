@@ -1,0 +1,11 @@
+.background-customise {
+  background-color: #fcfcfc;
+  background-repeat: no-repeat;
+}
+.account-container {
+  background-color: white;
+  box-shadow: 0px 0px 12px #afafaf29;
+  border-radius: 12px;
+  opacity: 1;
+  overflow: auto;
+}

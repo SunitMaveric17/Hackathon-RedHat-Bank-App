@@ -1,0 +1,62 @@
+<div class="login-background d-flex flex-row">
+  <div class="figure-container container-lg col-lg-10 offset-lg-1">
+    <figure class="figure mx-3 pt-5 d-none d-md-block">
+      <img
+        src="assets/images/welcome-login-image.svg"
+        class="figure-img img-fluid rounded"
+        alt="Welcome Back Image"
+      />
+      <h1 class="display-2">
+        <strong><b>Welcome Back!</b></strong>
+      </h1>
+      <p>Welcome to the red hat bank! Your Money is safe with Us</p>
+    </figure>
+    
+  </div>
+  <div
+      class="container-xl login-container text-center px-4"
+    >
+      <h1 class="mt-2 mb-4 pb-4 login-text-customise display-4">Login</h1>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="">
+        <div class="form-group my-2">
+          <input
+            type="text"
+            class="form-control"
+            id="userName"
+            formControlName="userName"
+            placeholder="User Name"
+          />
+          <div
+            *ngIf="
+              loginForm.get('userName')?.hasError('required') &&
+              loginForm.get('userName')?.touched
+            "
+            class="text-danger"
+          >
+            Username is required
+          </div>
+        </div>
+        <div class="form-group my-2">
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            formControlName="password"
+            placeholder="Password"
+          />
+          <div
+            *ngIf="
+              loginForm.get('password')?.hasError('required') &&
+              loginForm.get('password')?.touched
+            "
+            class="text-danger"
+          >
+            Password is required
+          </div>
+        </div>
+        <button type="submit" class="btn btn-login w-100 mt-2 mb-0">
+          LOGIN
+        </button>
+      </form>
+    </div>
+</div>

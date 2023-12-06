@@ -1,0 +1,104 @@
+.my-custom-scrollbar {
+  position: relative;
+  height: 54vh;
+  overflow: auto;
+}
+
+.fixed-table-header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1;
+}
+
+.table-wrapper-scroll-y {
+  display: block;
+}
+/* your-component.css (or component-specific CSS file) */
+.btn.dropdown-toggle::after {
+  display: none;
+}
+
+.customised-button {
+  background-color: white; /* Set the background color */
+  color: black; /* Set the text color */
+  border-color: rgba(0, 0, 0, 0.454); /* Set the border color */
+}
+
+.customised-button:hover {
+  background-color: white; /* Change background color on hover */
+  color: black; /* Change text color on hover */
+}
+/* styles.css or styles.scss */
+
+/* Make border transparent and active page red with white text */
+ngb-pagination ::ng-deep .ngb-pagination {
+  border: none !important;
+  background-color: transparent !important;
+}
+
+/* Add border radius to page links */
+ngb-pagination ::ng-deep .ngb-pagination .page-link {
+  border-radius: 5px; /* You can adjust the border radius value as per your preference */
+  /* Additional styles for page links if needed */
+}
+
+/* Change left and right arrows to greater than and lesser than symbols */
+ngb-pagination ::ng-deep .ngb-pagination .page-link.prev::before {
+  content: "\2039"; /* Unicode for lesser than symbol */
+}
+
+ngb-pagination ::ng-deep .ngb-pagination .page-link.next::after {
+  content: "\203A"; /* Unicode for greater than symbol */
+}
+
+ngb-pagination ::ng-deep .ngb-pagination .page-item.active .page-link {
+  background-color: red !important;
+  color: white !important;
+  border-color: transparent !important; /* Set border-color to transparent */
+}
+
+/* Style inactive page numbers as greyed */
+ngb-pagination ::ng-deep .ngb-pagination .page-item:not(.disabled) .page-link {
+  color: grey !important;
+}
+
+/* Style active and hover state for page numbers */
+ngb-pagination ::ng-deep .ngb-pagination .page-item .page-link {
+  border: none !important;
+}
+
+ngb-pagination ::ng-deep .ngb-pagination .page-item .page-link:hover {
+  background-color: rgba(255, 0, 0, 0.1) !important;
+}
+
+/* Modify active and inactive states using ng-deep */
+ngb-pagination ::ng-deep ul > li:not(.active) > a {
+  opacity: 1;
+  background-color: white;
+  color: grey;
+}
+
+ngb-pagination ::ng-deep ul > li.active > a {
+  background-color: red !important;
+  border-color: transparent; /* Set border-color to transparent */
+}
+
+.green-text-transform {
+  color: rgb(35, 205, 35);
+}
+
+.red-text-transform {
+  color: rgb(209, 79, 79);
+}
+
+.grey-text-transform {
+  color: rgb(197, 197, 197);
+}
+
+.custom-text-transform {
+  color: rgb(184, 20, 184);
+}
+.blocked-text-transform {
+  color: rgb(236, 236, 53);
+}

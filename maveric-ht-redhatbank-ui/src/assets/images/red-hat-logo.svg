@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="304" height="68" viewBox="0 0 304 68">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_2" data-name="Rectangle 2" width="68" height="68" transform="translate(161 16)" fill="#fff" stroke="#fff" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Group_2" data-name="Group 2" transform="translate(-161 -16)">
+    <text id="redhat" transform="translate(239 67)" fill="#fff" font-size="44" font-family="Lato-Bold, Lato" font-weight="700"><tspan x="0" y="0">red</tspan><tspan y="0" font-family="Lato-Regular, Lato" font-weight="400">hat</tspan></text>
+    <text id="Bank" transform="translate(375 67)" fill="#fff" font-size="44" font-family="Lato-LightItalic, Lato" font-weight="300" font-style="italic"><tspan x="0" y="0">Bank</tspan></text>
+    <g id="Mask_Group_1" data-name="Mask Group 1" clip-path="url(#clip-path)">
+      <g id="noun-cap-127185" transform="translate(166.233 21.233)">
+        <g id="Group_1" data-name="Group 1">
+          <path id="Path_1" data-name="Path 1" d="M37.189,11.017c-.031-1.442-1.535-2.605-3.394-2.605-1.879,0-3.4,1.187-3.4,2.651,0,.013,0,.022,0,.035A21.58,21.58,0,0,0,12.512,34.734c4.985-1.445,16.338-3.39,30.959,2.564l-.805,1.98c-14.739-6-26.15-3.539-30.3-2.24L2.563,44.4s-2.147,2.041.751,2.469c0,0,15.667-4.935,25.432,0s13.306.656,15.667-2.193c2.332-2.816,8.258-6.606,10.631-7.32l.112,0A21.584,21.584,0,0,0,37.189,11.017ZM20.247,29.307l-2.074-.518c3.481-13.921,11.955-15.165,12.315-15.213l.137,1.062.144,1.06C30.468,15.74,23.35,16.9,20.247,29.307ZM42,31.135c-.114-9.439-7.973-14.867-8.052-14.921l1.195-1.775c.362.244,8.867,6.084,9,16.669Z" fill="#ee0200"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,36 @@
+<div class="heading-p">
+  <div class="h4 strong bold">Total Customer % by City</div>
+  <div class="pad-4">
+    <div class="col-lg-4">Total Customers</div>
+    <div ngbDropdown class="col-lg-4">
+      <button class="btn" ngbDropdownToggle>
+        Filter By City
+        <div ngbDropdownMenu aria-labelledby="dropdownConfig">
+          <button
+            *ngFor="let menuItem of cities"
+            ngbDropdownItem
+            (click)="getGraph(menuItem)"
+          >
+            {{ menuItem }}
+          </button>
+        </div>
+      </button>
+    </div>
+  </div>
+  <div class="pb-5">
+    <div
+      *ngIf="currentValue != undefined"
+      class="circle-border"
+      [style.background]="getBackground(fillPercentage)"
+    >
+      <div class="circle"></div>
+      <div class="percentage">
+        {{ fillPercentage }}%<br />
+        {{ cityChosen }}
+      </div>
+    </div>
+    <div *ngIf="currentValue == undefined">
+      <app-no-content-result />
+    </div>
+  </div>
+</div>

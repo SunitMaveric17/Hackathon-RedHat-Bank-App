@@ -1,0 +1,44 @@
+.background-customise {
+  background-color: #fcfcfc;
+  background-repeat: no-repeat;
+}
+.account-container {
+  background-color: white;
+  box-shadow: -5px -5px 10px rgba(175, 175, 175, 0.29),
+    5px 5px 10px rgba(175, 175, 175, 0.29);
+  border-radius: 12px;
+  opacity: 1;
+  z-index: 1;
+  overflow: hidden;
+  position: relative;
+}
+.data-container {
+  background-color: white;
+  box-shadow: -10px -10px 10px 10px #afafaf29;
+  border-radius: 7px;
+  opacity: 1;
+}
+.balance-container {
+  background-color: #f5f6f8;
+  border-radius: 12px;
+}
+
+.green-pill {
+  color: #1bb077;
+  background-color: #c3eadb;
+}
+.red-pill {
+  color: #b01b1b;
+  background-color: #eac3c3;
+}
+
+a,
+u {
+  text-decoration: none;
+}
+.repayment {
+  margin-top: 1rem;
+}
+.repayment-text {
+  margin-right: 1rem;
+}

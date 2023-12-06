@@ -1,0 +1,14 @@
+.navbar-customise{
+    background: #000000 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+.logo-image{
+    max-height: 40px; /* svg image*/
+    width: auto;
+}
+
+.user-display{
+    color: white;
+    align-content: center;
+}

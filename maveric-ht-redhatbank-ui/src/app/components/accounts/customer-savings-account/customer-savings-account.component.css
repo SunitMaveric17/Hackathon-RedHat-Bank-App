@@ -1,0 +1,207 @@
+.theader {
+  background: #f5f6f8 0% 0% no-repeat padding-box;
+  border-radius: 8px 8px 0px 0px;
+  opacity: 1;
+}
+.tbody {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #d6d6d615;
+  border: 1px solid #f7f7f7;
+  border-radius: 8px;
+  opacity: 1;
+}
+.parent {
+  padding-top: 1.25rem;
+  margin-left: 1.18rem;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 1.25rem;
+}
+
+.child {
+  width: 10%;
+}
+.active {
+  padding-top: 15px;
+  padding-top: 0.5rem;
+  background: #53a485 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 26px #00000017;
+  border-radius: 100px;
+  opacity: 0.1;
+  text-align: center;
+  font: normal normal bold 14px/17px Lato;
+  letter-spacing: 0px;
+  color: #7cd37c;
+  opacity: 1;
+  width: 5% !important;
+}
+.customer {
+  margin: 1.3rem 2.56rem 2.56rem 2.56rem;
+  width: 96%;
+  /* UI Properties */
+
+  border-radius: 7px 7px 0px 0px;
+  opacity: 1;
+}
+
+.main-customer {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  /* height: 1080px; */
+  /* UI Properties */
+  background: #fcfcfc 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+.sceond-main {
+  margin-left: 10rem;
+  margin-right: 8.75rem;
+  /* UI Properties */
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 12px #afafaf29;
+  opacity: 1;
+}
+.modify-class {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #c6ccd1;
+  display: flex;
+  flex-direction: row;
+  height: 6.75rem;
+}
+.modified-class {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  padding-left: 60%;
+  border: 1px solid #c6ccd1;
+  height: 6.75rem;
+  border-radius: 7px;
+}
+.modify-parent {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  align-items: center;
+  border-right: 1px solid #c6ccd1;
+}
+.input-tag {
+  height: 3.4rem;
+  border-radius: 7px;
+}
+.modify-amount {
+  border: 1px solid #c7c7c7;
+  border-radius: 4px;
+  color: #939393;
+  border-radius: 7px;
+}
+.btn-class {
+  color: #ffffff;
+  width: 9.68rem;
+  background: #ee0200 0% 0% no-repeat padding-box;
+  border-radius: 7px;
+}
+.notification {
+  display: flex;
+  background: #f5f6f8;
+  box-sizing: border-box;
+  height: 2rem;
+}
+.closebtn {
+  text-decoration: underline;
+  font: normal normal bold 16px/19px Wallop;
+  letter-spacing: 0px;
+  color: #354767;
+  opacity: 1;
+}
+.blockbtn {
+  text-decoration: underline;
+  font: normal normal bold 16px/19px Wallop;
+  letter-spacing: 0px;
+  color: #ee0200;
+  margin-right: 2rem;
+  opacity: 1;
+}
+.pic {
+  margin-right: 0.4rem;
+}
+.pic2 {
+  margin-left: 1rem;
+  margin-right: 0.2rem;
+}
+.dialog {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border-radius: 12px;
+  opacity: 1;
+  top: 444px;
+  left: 713px;
+  width: 494px;
+  height: 193px;
+  background: green;
+}
+
+::ng-deep .p-dialog-mask {
+  background-color: #000000 /* Dark black overlay with some transparency */;
+  opacity: 0.9;
+}
+::ng-deep .p-dialog {
+  background-color: #ffffff;
+  width: 35rem !important;
+  height: 12rem !important;
+}
+
+.modal-btn {
+  margin-top: 1.25rem;
+  height: 3.625rem;
+  color: #ffffff;
+  margin-left: 0.5rem;
+  width: 5rem;
+  background: #ee0200 0% 0% no-repeat padding-box;
+  margin-bottom: 0.5rem;
+}
+::ng-deep .p-datatable-thead {
+  margin-right: 10rem;
+
+  width: 97.5rem;
+  height: 2.5rem;
+  /* UI Properties */
+  background: #f5f6f8 0% 0% no-repeat padding-box;
+  border-radius: 8px 8px 0px 0px;
+  opacity: 1;
+}
+
+::ng-deep .p-datatable-table {
+  margin-bottom: 2rem !important;
+  height: 45rem !important;
+}
+
+::ng-deep .p-paginator {
+  padding-right: 5rem;
+  justify-content: flex-end;
+}
+::ng-deep p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  background: #ee0200 0% 0% no-repeat padding-box !important;
+}
+::ng-deep .p-paginator .p-dropdown {
+  width: 5.3rem !important;
+}
+::ng-deep .p-paginator-rpp-options {
+  order: -1 !important;
+}
+p-dropdown {
+  /* Your CSS styles here */
+  order: -1 !important;
+}
+
+.column-width {
+  width: 18%;
+  padding-left: 0.5rem;
+  height: 2.6rem;
+}
+.deposit {
+  color: #ee0200;
+}
+.withdraw {
+  color: #38c18d;
+}
+.checkbox-style {
+  background: #ee0200;
+  border: 0.3428570032119751px solid #ffffff;
+}

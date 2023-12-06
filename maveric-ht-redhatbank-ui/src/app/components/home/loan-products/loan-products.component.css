@@ -1,0 +1,118 @@
+
+.count{
+ 
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 26px #00000017;
+    border-radius: 12px;
+    opacity: 1;
+}
+.heading-p{
+  padding: 10px;
+}
+.header{
+text-align: left;
+font: normal normal bold 22px/27px Lato;
+letter-spacing: 0px;
+color: #000000;
+opacity: 1;
+padding-bottom: 40px
+}
+.pad-r{
+  margin-top: -18%;
+}
+
+.header-1{
+    width: 183px;
+min-height: 38px;
+ 
+text-align: left;
+font: normal normal normal 16px/19px Lato;
+letter-spacing: 0px;
+color: #354767;
+opacity: 1;
+margin-left: 20px
+}
+
+.dropdown{
+    margin-left:130px;
+    width: 138px;
+min-height: 35px;
+ 
+background: #FFFFFF 0% 0% no-repeat padding-box;
+border: 0.800000011920929px solid #E1E1E1;
+border-radius: 4px;
+opacity: 1;
+}
+
+.s1{
+    display: flex;
+}
+
+.rect{
+    margin-left:20px;
+    width: 212px;
+min-height: 29px;
+ 
+opacity: 1;
+margin-top: 30px;
+display: flex;
+flex-wrap: wrap;
+}
+
+.month{
+min-height: 17px;
+ 
+text-align: left;
+font: normal normal bold 14px/17px Lato;
+letter-spacing: 0px;
+color: #000000;
+opacity: 1;
+}
+
+.green{
+    width: 212px;
+min-height: 7px;
+ 
+background: #F5F6F8 0% 0% no-repeat padding-box;
+border-radius: 4px;
+opacity: 1;
+}
+.count1{
+    width: 16px;
+    min-height: 17px;
+    text-align: right;
+    font: normal normal 900 14px/17px Lato;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    /* text-align: right; */
+    margin-left: 168px;
+}
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+    .header {
+      width: 100%; /* Adjust width for mobile */
+    }
+    .dropdown {
+      margin-left: 0; /* Remove margin for mobile */
+      width: 100%; /* Make dropdown full width for mobile */
+    }
+    .rect {
+      width: 100%; /* Make rectangles full width for mobile */
+      margin-left: 0; /* Remove margin for mobile */
+    }
+    .count1 {
+      margin-left: 0; /* Remove margin for mobile */
+    }
+  }
+  
+  /* Tablet Styles (Adjust as needed) */
+  @media (min-width: 768px) and (max-width: 991px) {
+    .header {
+      font-size: 18px; /* Adjust font size for tablets */
+    }
+    .dropdown {
+      width: 100%; /* Make dropdown full width for tablets */
+    }
+  }

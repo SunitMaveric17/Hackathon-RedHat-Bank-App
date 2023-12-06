@@ -1,0 +1,30 @@
+<nav
+  class="navbar navbar-expand-lg navbar-customise fixed-top"
+  data-bs-theme="dark"
+>
+  <div class="container-fluid col-lg-11">
+    <a class="navbar-brand" href="/home">
+      <img
+        src="assets/images/red-hat-logo.svg"
+        alt="Logo"
+        class="d-inline-block align-text-top logo-image"
+      />
+    </a>
+    <div *ngIf="checkPage()">
+      <div class="collapse navbar-collapse px-5" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <div class="user-display mx-3 border-info rounded">
+            Welcome, <br />
+            Jayanth K
+          </div>
+
+          <li class="nav-item">
+            <div class="nav-link btn" (click)="logout()">
+              <i class="pe-1 bi bi-box-arrow-right"></i>Logout
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

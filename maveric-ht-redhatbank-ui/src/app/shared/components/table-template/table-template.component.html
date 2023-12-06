@@ -1,0 +1,107 @@
+<div class="row justify-content-center px-3">
+  <div *ngIf="dataTable == undefined || dataTable.length == 0; else showTable">
+    <app-no-content-result></app-no-content-result>
+  </div>
+  <ng-template #showTable>
+    <div class="pt-1">
+      <div class="table-wrapper-scroll-y my-custom-scrollbar">
+        <table class="table align-middle table-responsive">
+          <thead class="table-light px-3 fixed-table-header">
+            <tr>
+              <th
+                class="fw-normal text-muted text-center"
+                scope="col"
+                appSortColumns
+                [appSort]="dataTable"
+                data-order="desc"
+                data-type="text"
+                [attr.data-name]="visibleColumnsElements[i]"
+                *ngFor="let head of columns; let i = index"
+              >
+                {{ head }}
+                <i *ngIf="head != ''" class="fa fa-sort"></i>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="px-2">
+            <tr
+              scope="row"
+              class="m-3"
+              *ngFor="
+                let item of dataTable
+                  | slice : (page - 1) * pageSize : page * pageSize
+              "
+            >
+              <td
+                *ngFor="let header of visibleColumnsElements"
+                [class]="
+                  onColumnCustomiseStyle(header, item[header]) + ' text-justify'
+                "
+              >
+                {{ formatDateTime(item[header]) }}
+              </td>
+              <td *ngIf="numberOfRowOptions != 0" ngbDropdown>
+                <button class="btn btn-light bi-three-dots" ngbDropdownToggle>
+                  <div
+                    ngbDropdownMenu
+                    aria-labelledby="dropdownConfig"
+                    placement="left"
+                  >
+                    <button
+                      *ngFor="let menuItem of rowOptions"
+                      ngbDropdownItem
+                      (click)="sendEventBack(item, menuItem)"
+                    >
+                      {{ menuItem }}
+                    </button>
+                  </div>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br />
+      <div class="d-flex justify-content-end mr-3 pt-4">
+        <div ngbDropdown class="mr-3">
+          <div>
+            Show
+            <button
+              type="button"
+              class="btn btn-outline-primary customised-button"
+              id="dropdownConfig"
+              ngbDropdownToggle
+            >
+              {{ selectedDropdownValue }}
+              <span class="bi bi-caret-up-fill"></span>
+            </button>
+
+            <div ngbDropdownMenu aria-labelledby="dropdownConfig">
+              <button ngbDropdownItem (click)="updateDropdownValue(25)">
+                25
+              </button>
+              <button ngbDropdownItem (click)="updateDropdownValue(50)">
+                50
+              </button>
+              <button ngbDropdownItem (click)="updateDropdownValue(75)">
+                75
+              </button>
+              <button ngbDropdownItem (click)="updateDropdownValue(100)">
+                100
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex">
+          <ngb-pagination
+            [collectionSize]="collectionSize"
+            [(page)]="page"
+            [maxSize]="5"
+            [pageSize]="pageSize"
+            class="px-2"
+          ></ngb-pagination>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>

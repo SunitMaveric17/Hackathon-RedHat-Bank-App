@@ -1,0 +1,45 @@
+
+.loan-accounts-bg-image{
+    padding: 0; 
+    min-height: 30vh;
+    background-color: #ec689b;
+    border-radius: 10px;
+}
+
+.loan-accounts-image{
+    background-image: url("src/assets/images/loan-accounts-home/loan-accounts-inside.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+}
+.heading{
+  display: inline;
+  color:#edd2d2;
+  font-family: serif;
+}
+.custom-img{
+  height: 100px;
+  float: right;
+  margin-top: -12%;
+}
+.heading-pad{
+  padding: 34px;
+}
+.heading-btn{
+  padding-left: 34px;
+  padding-bottom: 20px;
+  margin-top: -8%;
+}
+
+  .custom-btn {
+    background-color: white;
+    color: red;
+    text-align: center;
+    font-size: small;
+    font-weight: bolder;
+}
+
+.thin-text {
+    font-weight: 300; /* Adjust the font-weight to make text thinner */
+  }
+

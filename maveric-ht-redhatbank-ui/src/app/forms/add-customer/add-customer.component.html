@@ -1,0 +1,196 @@
+<div class="justify-content-center align-items-center">
+  <div class="jumbotron h-100 d-flex">
+    <div class="container-fluid">
+      <div class="container-fluid p-3 w-90">
+        <button
+          type="button"
+          class="btn-close btn-close-red float-end"
+          aria-label="Close"
+          (click)="onCancel()"
+        ></button>
+
+        <h3 class="h3 text-center bold strong py-4">Create Customer Account</h3>
+        <form
+          [formGroup]="addCustomerForm"
+          class="form-floating mb-3"
+          (ngSubmit)="onSubmit()"
+        >
+          <div class="form-floating mb-2">
+            <input
+              type="text"
+              class="form-control"
+              id="firstName"
+              formControlName="firstName"
+            />
+            <label class="form-label" for="firstName">First Name</label>
+            <div
+              class="text-danger text-sm"
+              *ngIf="
+                addCustomerForm.get('firstName')?.hasError('required') &&
+                addCustomerForm.get('firstName')?.touched
+              "
+            >
+              First name is required
+            </div>
+            <div
+              class="text-danger text-sm"
+              *ngIf="
+                addCustomerForm.get('firstName')?.hasError('minlength') &&
+                addCustomerForm.get('firstName')?.touched
+              "
+            >
+              First name length is minimum 3 characters
+            </div>
+            <div
+              class="text-danger text-sm"
+              *ngIf="
+                addCustomerForm.get('firstName')?.hasError('maxlength') &&
+                addCustomerForm.get('firstName')?.touched
+              "
+            >
+              First name length is maximum 25 characters
+            </div>
+            <div
+              class="text-danger text-sm"
+              *ngIf="
+                addCustomerForm.get('firstName')?.hasError('pattern') &&
+                addCustomerForm.get('firstName')?.touched
+              "
+            >
+              Invalid format for name
+            </div>
+          </div>
+          <div class="form-floating mb-2">
+            <input
+              type="text"
+              class="form-control"
+              id="lastName"
+              formControlName="lastName"
+            />
+            <label class="form-label" for="lastName">Last Name</label>
+            <div
+              class="text-danger text-sm"
+              *ngIf="
+                addCustomerForm.get('lastName')?.hasError('required') &&
+                addCustomerForm.get('lastName')?.touched
+              "
+            >
+              Last name is required
+            </div>
+            <div
+              class="text-danger text-sm"
+              *ngIf="
+                addCustomerForm.get('lastName')?.hasError('minlength') &&
+                addCustomerForm.get('lastName')?.touched
+              "
+            >
+              Last name is of minimum 3 characters
+            </div>
+            <div
+              class="text-danger text-sm"
+              *ngIf="
+                addCustomerForm.get('lastName')?.hasError('maxlength') &&
+                addCustomerForm.get('lastName')?.touched
+              "
+            >
+              Last name is of maximum 25 characters
+            </div>
+            <div
+              class="text-danger text-sm"
+              *ngIf="
+                addCustomerForm.get('lastName')?.hasError('pattern') &&
+                addCustomerForm.get('lastName')?.touched
+              "
+            >
+              Invalid format for name
+            </div>
+          </div>
+          <div class="form-floating mb-2">
+            <input
+              type="text"
+              class="form-control"
+              id="email"
+              formControlName="email"
+            />
+            <label class="form-label" for="email">Email ID</label>
+            <div
+              class="text-danger text-sm"
+              *ngIf="
+                addCustomerForm.get('email')?.hasError('required') &&
+                addCustomerForm.get('email')?.touched
+              "
+            >
+              Email ID is required
+            </div>
+            <div
+              class="text-danger text-sm"
+              *ngIf="
+                addCustomerForm.get('email')?.hasError('pattern') &&
+                addCustomerForm.get('email')?.touched
+              "
+            >
+              Provide a valid email id
+            </div>
+          </div>
+          <div class="form-floating mb-2">
+            <input
+              type="text"
+              class="form-control"
+              id="phoneNumber"
+              formControlName="phoneNumber"
+            />
+            <label class="form-label" for="phoneNumber">Phone Number</label>
+            <div
+              class="text-danger text-sm"
+              *ngIf="
+                addCustomerForm.get('phoneNumber')?.hasError('required') &&
+                addCustomerForm.get('phoneNumber')?.touched
+              "
+            >
+              Phone Number is required
+            </div>
+            
+            <div
+              class="text-danger text-sm"
+              *ngIf="
+                addCustomerForm.get('phoneNumber')?.hasError('pattern') &&
+                addCustomerForm.get('phoneNumber')?.touched
+              "
+            >
+              Invalid Phone Number
+            </div>
+          </div>
+          <div class="form-floating mb-3">
+            <select id="city" formControlName="city" class="form-select">
+              <option
+                *ngFor="let city of citiesAvailable; let first = first"
+                [value]="city"
+                [selected]="first"
+              >
+                {{ city }}
+              </option>
+            </select>
+            <div
+              class="text-danger text-sm"
+              *ngIf="
+                addCustomerForm.get('city')?.hasError('required') &&
+                addCustomerForm.get('city')?.touched
+              "
+            >
+              Please select a city.
+            </div>
+            <label for="city">Select City</label>
+          </div>
+          <button
+            type="submit"
+            [disabled]="addCustomerForm.invalid"
+            class="btn btn-danger w-100"
+          >
+            CREATE
+          </button>
+          <div class="pt-4"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="heading-p">
+      
+      
+  <div class="h4 strong bold">
+    Total Loan Products Sold by Month</div>
+  <div class="col-lg-4">
+    Select Loan Products Sold by Year
+   </div>   
+   <div  class="col-lg-4">
+    <select name="cars" id="cars" class="dropdown" (change)="onYearSelect($event)">
+      <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+    </select>
+   </div>    
+   <div class="container">
+   <div class="row"> 
+   <div class="col-md-6">  
+        <div class="rect" *ngFor="let month of getFirstHalfMonths()">
+          <div class="month">{{ month.name }}</div>
+          <div class="count1">{{ month.count }}</div>
+          <div class="green" [style.background]="getBackground(month.count)"></div>
+        </div>
+    </div> 
+        <div class="col-md-6">  
+        <div class="rect" *ngFor="let month of getSecondHalfMonths()">
+          <div class="month">{{ month.name }}</div>
+          <div class="count1">{{ month.count }}</div>
+          <div class="green" [style.background]="getBackground(month.count)"></div>
+        </div>
+      </div>
+    </div>
+  </div>  
+  </div>
+

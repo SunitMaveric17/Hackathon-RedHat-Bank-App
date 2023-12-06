@@ -1,0 +1,25 @@
+<div class="background-customise pt-5">
+  <div class="account-container col-xl-10 offset-lg-1 p-4">
+    <app-account-template
+      [searchText]="searchText"
+      (onSearchClick)="getSearch($event)"
+      (onCreateClick)="createNewLoanAccount($event)"
+      accountName="Loan Account"
+      buttonName="+Create Loan Account"
+      searchPlaceHolder="Search By: Customer Name / Customer Id  / Customer Email / Customer Phone"
+    />
+    <div class="pb-2">
+      <app-table-template
+        [columns]="tableColumns"
+        [visibleColumnsElements]="visibleColumnElements"
+        [dataTable]="currentLoanAccounts"
+        [collectionSize]="collectionSize"
+        [pageSize]="pageSize"
+        [rowOptions]="rowOptions"
+        [colorColumnName]="colorColumnName"
+        [colorColumnAttributes]="colorColumnAttributes"
+        (onRowOptionClick)="rowOptionEvent($event)"
+      />
+    </div>
+  </div>
+</div>

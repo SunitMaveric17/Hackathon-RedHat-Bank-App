@@ -1,0 +1,42 @@
+.savings-accounts-bg-image {
+  padding: 0;
+  min-height: 30vh;
+  background-color: #0052f7;
+  border-radius: 10px;
+}
+
+.savings-accounts-image {
+  background-image: url("src/assets/images/savings-account-home/savings-accounts-inside.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.heading{
+  display: inline;
+  color:#dcd4d4;
+  font-family: serif;
+}
+.custom-img{
+  height: 100px;
+  float: right;
+  margin-top: -12%;
+}
+.heading-pad{
+  padding: 34px;
+}
+.heading-btn{
+  padding-left: 34px;
+  padding-bottom: 20px;
+  margin-top: -8%;
+}
+
+.custom-btn {
+  background-color: white;
+  color: red;
+  text-align: center;
+  font-size: small;
+  font-weight: bolder;
+}
+
+.thin-text {
+  font-weight: 300; /* Adjust the font-weight to make text thinner */
+}
